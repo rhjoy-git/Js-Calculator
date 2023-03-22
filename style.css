@@ -72,6 +72,8 @@ body{
 .calculator .keys-sec .clear{
     color: rgb(202, 0, 0);
 }
+.calculator .keys-sec .sqrt-rt,
+.calculator .keys-sec .modu,
 .calculator .keys-sec .left-bracket,
 .calculator .keys-sec .right-bracket{
     color: #0b84ff;
@@ -83,25 +85,3 @@ body{
     color: #f75562;
     font-size: 1.8em;
 }
-.calculator .keys-sec 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
