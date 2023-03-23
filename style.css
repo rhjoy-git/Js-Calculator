@@ -8,10 +8,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: auto;
     background: #b3b6b8;
 }
 .calculator{
+    margin-top: 30px;
     background: #131313;
     position: relative;
     width: 360px;
