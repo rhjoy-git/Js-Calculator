@@ -24,8 +24,9 @@ buttons.forEach((button) => {
     }
 
     // Check if the button clicked is an operator
-    if (buttonValue === "+" || buttonValue === "-" || buttonValue === "*" || buttonValue === "/") {
+    if (buttonValue === "+" || buttonValue === "-" || buttonValue === "×" || buttonValue === "÷" || buttonValue === "%") {
       operator = buttonValue;
+      preView.innerHTML = operand1 + " " + operator;
     }
 
     // Check if the button clicked is the equals sign
@@ -42,11 +43,14 @@ buttons.forEach((button) => {
         case "-":
           answer = num1 - num2;
           break;
-        case "*":
+        case "×":
           answer = num1 * num2;
           break;
-        case "/":
+        case "÷":
           answer = num1 / num2;
+          break;
+        case "% ":
+          answer = num1 % num2;
           break;
         default:
           break;
