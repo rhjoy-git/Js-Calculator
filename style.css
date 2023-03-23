@@ -23,7 +23,7 @@ body{
 .calculator .keys-sec{
     position: relative;
     display: grid;
-
+    overflow: hidden;
 }
 .calculator .keys-sec #result{
     padding-right: 10px;

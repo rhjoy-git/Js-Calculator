@@ -7,7 +7,7 @@ let operand1 = "";
 let operand2 = "";
 let operator = "";
 let count = null;
-let dotCounter = null;
+let dotCounter = true;
 
 // Add click event listeners to all buttons
 buttons.forEach((button) => {
@@ -15,17 +15,16 @@ buttons.forEach((button) => {
     const buttonValue = e.target.innerText;
 
     // Check if the button clicked is a number
-    if (!isNaN(buttonValue) || buttonValue === ".") {
+    if (!isNaN(buttonValue) || buttonValue === "." && dotCounter === true) {
+      dotCounter = false;
       if (operator === "") {
         operand1 += buttonValue;
         result.innerText = operand1;
         count = 0;
-        // console.log("o1 " + operand1);
       } else {
         operand2 += buttonValue;
         result.innerText = operand2;
         count = 1;
-        // console.log("o2 " + operand2);
       }
     }
 
@@ -100,6 +99,7 @@ buttons.forEach((button) => {
       operator = "";
       preView.innerText = "";
       count = null;
+      dotCounter = true;
     }
   });
 });
