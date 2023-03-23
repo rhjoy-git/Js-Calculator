@@ -1,7 +1,7 @@
 // Get the elements from the HTML
 const result = document.getElementById("result");
 const buttons = document.querySelectorAll("button");
-
+let preView = document.getElementById("pre-view");
 // Create variables for the calculator
 let operand1 = "";
 let operand2 = "";
@@ -11,7 +11,7 @@ let operator = "";
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const buttonValue = e.target.innerText;
-    
+
     // Check if the button clicked is a number
     if (!isNaN(buttonValue) || buttonValue === ".") {
       if (operator === "") {
@@ -70,7 +70,3 @@ buttons.forEach((button) => {
     }
   });
 });
-
-
-
-
