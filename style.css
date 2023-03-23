@@ -25,7 +25,8 @@ body{
     display: grid;
 
 }
-.calculator .keys-sec #output{
+.calculator .keys-sec #result{
+    padding-right: 10px;
     position: relative;
     grid-column: span 4;
     user-select: none;
@@ -34,7 +35,7 @@ body{
     text-align: end;
     color: #5166d6;
     height: 100px;
-    line-height: 100px;
+    line-height: 125px;
     border-radius: 10px;
     margin-bottom: 12px;
     font-size: 2em;
