@@ -29,13 +29,20 @@ buttons.forEach((button) => {
     }
 
     // Check if the button clicked is an operator
-    if (buttonValue === "+" || buttonValue === "-" || buttonValue === "×" ||
-      buttonValue === "÷" || buttonValue === "%") {
+    if (buttonValue === "+" || buttonValue === "-" || buttonValue === "×" || buttonValue === "÷") {
       operator = buttonValue;
       result.innerText = "";
       preView.innerHTML = operand1 + " " + operator;
     }
-
+    // if the percentage button pressed
+    if(buttonValue === "%") {
+      operator = buttonValue;
+      const num1 = parseFloat(operand1);
+      answer = num1 / 100;
+      result.innerText = answer;
+      preView.innerText = answer;
+      operand1 = answer;
+    }
     // Check if the button clicked is the equals sign
     if (buttonValue === "=") {
       const num1 = parseFloat(operand1);
@@ -56,13 +63,9 @@ buttons.forEach((button) => {
         case "÷":
           answer = num1 / num2;
           break;
-        case "%":
-          answer = num1 / 100;
-          break;
         default:
           break;
       }
-
       // Display the result
       result.innerText = answer;
       preView.innerText = num1 + operator + num2;
