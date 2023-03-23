@@ -43,6 +43,12 @@ body{
     box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1),
     inset 0 -5px 15px #484848;
 }
+#pre-view{
+    position: absolute;
+    font-size: 1.5em;
+    color: rgb(228, 0, 0);
+    padding: 5px 0 0 10px;
+}
 .calculator .keys-sec .key{
     position: relative;
     padding: 10px;
