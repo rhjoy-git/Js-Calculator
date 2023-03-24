@@ -57,9 +57,6 @@ buttons.forEach((button) => {
         case "÷":
           answer = num1 / num2;
           break;
-        case "%":
-          answer = num1 / 100;
-          break;
         default:
           break;
       }

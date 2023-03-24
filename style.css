@@ -1,32 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: consolas;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: auto;
+    height: 90vh;
     background: #b3b6b8;
 }
-.calculator{
-    margin-top: 30px;
+
+.calculator {
     background: #131313;
     position: relative;
     width: 360px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 10px 0px 33px rgba(0, 0, 0, 0.1),
-     10px -9px 20px #fffb;
+        10px -9px 20px #fffb;
 }
-.calculator .keys-sec{
+
+.calculator .keys-sec {
     position: relative;
     display: grid;
     overflow: hidden;
 }
-.calculator .keys-sec #result{
+
+.calculator .keys-sec #result {
     padding-right: 10px;
     position: relative;
     grid-column: span 4;
@@ -41,16 +45,18 @@ body{
     margin-bottom: 12px;
     font-size: 2em;
     font-weight: 500;
-    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1),
-    inset 0 -5px 15px #484848;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+        inset 0 -5px 15px #484848;
 }
-#pre-view{
+
+#pre-view {
     position: absolute;
     font-size: 1.3em;
     color: rgb(228, 0, 0);
     padding: 5px 0 0 10px;
 }
-.calculator .keys-sec .key{
+
+.calculator .keys-sec .key {
     position: relative;
     padding: 10px;
     margin: 5px;
@@ -67,35 +73,168 @@ body{
     font-weight: bold;
     background: #ebebeb;
 }
-.calculator .keys-sec .allClear{
+
+.calculator .keys-sec .allClear {
     grid-column: span 2;
     color: rgb(15, 174, 0);
 }
-.calculator .keys-sec .equal{
+
+.calculator .keys-sec .equal {
     grid-row: span 2;
     font-size: 1.9em;
     background: #f75562;
     color: #fff;
 }
-.calculator .keys-sec .clear{
+
+.calculator .keys-sec .clear {
     color: rgb(202, 0, 0);
 }
+
 .calculator .keys-sec .sqrt-rt,
 .calculator .keys-sec .modu,
 .calculator .keys-sec .left-bracket,
-.calculator .keys-sec .right-bracket{
+.calculator .keys-sec .right-bracket {
     color: #0b84ff;
 }
+
 .calculator .keys-sec .multi,
 .calculator .keys-sec .divi,
 .calculator .keys-sec .minu,
-.calculator .keys-sec .plus{
+.calculator .keys-sec .plus {
     color: #f75562;
     font-size: 1.8em;
 }
 
+.description {
+    text-align: left;
+    margin-left: 10px;
+    padding-left: 30px;
+}
+
+.feature-title {
+    margin-bottom: 10px;
+}
 
 /* Responsive Area */
+
+@media only screen and (max-width: 1400px) {
+    .description {
+        text-align: left;
+        margin-left: 20px;
+        padding-left: 30px;
+        width: 41%;
+    }
+
+    .feature-title {
+        margin-bottom: 15px;
+        font-size: 1.35em;
+    }
+
+    .description ol li {
+        margin-top: 7px;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 996px) {
+    .description {
+        width: 44%;
+    }
+
+    .feature-title {
+        font-size: 1.2em;
+        word-spacing: -2.7px;
+        letter-spacing: -1px;
+    }
+
+    .description ol li {
+        font-size: 1em;
+        font-weight: 500;
+        word-spacing: -2.7px;
+        letter-spacing: -1px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .description {
+        margin-left: 0;
+        width: 30%;
+    }
+
+    .feature-title {
+        font-size: 0.6em;
+        word-spacing: -1.7px;
+        letter-spacing: -0.5px;
+        margin-bottom: 0px;
+    }
+
+    .description ol li {
+        margin-top: 5px;
+        font-size: 0.7em;
+        letter-spacing: -0.5px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    body {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .calculator {
+        margin-top: 20px;
+    }
+    .description {
+        padding: 10px 30px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .feature-title {
+        font-size: 1em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .description ol li {
+        margin-top: 5px;
+        font-size: 0.812em;
+        letter-spacing: 0.02em;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .calculator{
+        width: 320px;
+    }
+    #pre-view {
+        font-size: 1.1em;
+        padding: 14px 0 0 10px;
+    }
+    .calculator .keys-sec #result {
+        line-height: 130px;
+        font-size: 1.4em;
+        word-spacing: -0.3em;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    .calculator{
+        width: 290px;
+    }
+    #pre-view {
+        font-size: 1em;
+        padding: 14px 0 0 10px;
+    }
+    .calculator .keys-sec #result {
+        line-height: 130px;
+        font-size: 1.2em;
+        word-spacing: -0.3em;
+    }
+    .calculator .keys-sec .key {
+        padding: 4px;
+        margin: 3px;
+        font-size: 1.2em;
+    }
+
+}
 
 
 
