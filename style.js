@@ -3,11 +3,13 @@ const result = document.getElementById("result");
 const buttons = document.querySelectorAll("button");
 let preView = document.getElementById("pre-view");
 // Create variables for the calculator
-let operand1 = "";
+let operand1 = "0";
 let operand2 = "";
 let operator = "";
+let answer = "0";
 let count = null;
 let dotCounter = true;
+let answerSwitch = false;
 
 // Add click event listeners to all buttons
 buttons.forEach((button) => {
@@ -16,9 +18,12 @@ buttons.forEach((button) => {
 
     // Check if the button clicked is a number
     if (!isNaN(buttonValue) || buttonValue === "." && dotCounter === true) {
+      answerSwitch = false;
       if (buttonValue === ".")
         dotCounter = false;
       if (operator === "") {
+        if (operand1 === "0")
+          operand1 = "";
         operand1 += buttonValue;
         result.innerText = operand1;
         count = 0;
@@ -33,6 +38,9 @@ buttons.forEach((button) => {
     if (buttonValue === "+" || buttonValue === "-" || buttonValue === "×" || buttonValue === "÷" || buttonValue === "%") {
       operator = buttonValue;
       result.innerText = "";
+      if (answerSwitch) {
+        operand1 = answer;
+      }
       preView.innerHTML = operand1 + " " + operator;
       dotCounter = true;
     }
@@ -41,7 +49,6 @@ buttons.forEach((button) => {
     if (buttonValue === "=") {
       const num1 = parseFloat(operand1);
       const num2 = parseFloat(operand2);
-      let answer = "";
       count = 3;
       // Perform the operation based on the operator
       switch (operator) {
@@ -55,7 +62,10 @@ buttons.forEach((button) => {
           answer = num1 * num2;
           break;
         case "÷":
-          answer = num1 / num2;
+          if (num1 === 0)
+            answer = "infinity"
+          else
+            answer = num1 / num2;
           break;
         default:
           break;
@@ -64,9 +74,11 @@ buttons.forEach((button) => {
       result.innerText = answer;
       preView.innerText = num1 + operator + num2;
       // Reset the variables
-      operand1 = answer;
+      // operand1 = answer;
+      operand1 = "";
       operand2 = "";
       operator = "";
+      answerSwitch = true;
     }
     // Check if the button backspace (C) is the clear button
     if (buttonValue === "C") {
@@ -91,9 +103,10 @@ buttons.forEach((button) => {
     // Check if the button clicked (AC) is the clear button
     if (buttonValue === "AC") {
       result.innerText = "";
-      operand1 = "";
+      operand1 = "0";
       operand2 = "";
       operator = "";
+      answer = "0";
       preView.innerText = "";
       count = null;
       dotCounter = true;
